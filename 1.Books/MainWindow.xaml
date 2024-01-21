@@ -1,0 +1,75 @@
+﻿<Window x:Class="_1.Books.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1.Books"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="720" Width="1280"
+        >
+    <StackPanel>
+        <StackPanel Margin="15">
+            <TextBlock Text="BookAz" FontSize="20" FontFamily="Raavi"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="15 0 15 0" HorizontalAlignment="Left">
+
+                <TextBlock TextDecorations="Underline" FontFamily="Raavi" Text="Add New Book" FontSize="15" Margin="0 10 0 15" FontWeight="Bold" LineHeight="12"/>
+                <!-- ADD NEW BOOK FORM -->
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Id"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Id}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Name"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Name}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Pages"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Pages}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Year Press"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.YearPress}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Comment"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Comment}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Quantity"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Quantity}" />
+                </StackPanel>
+                <!--Comboboxes-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Theme"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Id_Themes}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Category"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Id_Category}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Author"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Id_Author}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="70" Style="{DynamicResource TextBlockStyle1}" Text="Press"/>
+                    <TextBox Width="300" Style="{DynamicResource AddBookFormInputStyle}" Text="{Binding Book.Id_Press}" />
+                </StackPanel>
+                <StackPanel>
+                    <Button Style="{DynamicResource AddBtnStyle}" Margin="0 15 0 0" Background="Transparent" Click="addNewBook">
+                        <TextBlock Text="Add Book"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <DataGrid Margin="60 0 0 0" AutoGenerateColumns="True" ItemsSource="{Binding Books}"></DataGrid>
+            </StackPanel>
+
+        </StackPanel>
+
+    </StackPanel>
+</Window>
